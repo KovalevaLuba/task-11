@@ -46,7 +46,12 @@ document.getElementById('btnOver').addEventListener('click', function () {
             answerNumber  = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
-            answerField.innerText = `Вы загадали число ${answerNumber }?`;
+            questionRandom = Math.round(Math.random()*3);
+            (questionRandom === 0) ? questionPhrase = `Вы загадали число ${answerNumber }?`: 
+            (questionRandom === 1) ? questionPhrase = `Спорим, Вы загадали ${answerNumber }?`:
+            (questionRandom === 2) ? questionPhrase = `Хм.. это ${answerNumber }?`:
+            questionPhrase = `Я думаю, Вы загадали ${answerNumber }`;
+            answerField.innerText = questionPhrase;
         }
     }
 })
@@ -65,9 +70,12 @@ document.getElementById('btnLess').addEventListener('click', function () {
             answerNumber  = Math.floor((maxValue + minValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
-            answerField.innerText = `Вы загадали число ${answerNumber }?`;
-            console.log(minValue);
-            console.log(maxValue);
+            questionRandom = Math.round(Math.random()*3);
+            (questionRandom === 0) ? questionPhrase = `Вы загадали число ${answerNumber }?`: 
+            (questionRandom === 1) ? questionPhrase = `Спорим, Вы загадали ${answerNumber }?`:
+            (questionRandom === 2) ? questionPhrase = `Хм.. это ${answerNumber }?`:
+            questionPhrase = `Я думаю, Вы загадали ${answerNumber }`;
+            answerField.innerText = questionPhrase;
         }
     }
 })
