@@ -10,6 +10,8 @@ const answerField = document.getElementById('answerField');
 
 let questionPhrase = '';
 let questionRandom = 0;
+let winnerPhrase = '';
+let winnerRandom = 0;
 
 orderNumberField.innerText = orderNumber;
 answerField.innerText = `Вы загадали число ${answerNumber }?`;
@@ -83,8 +85,13 @@ document.getElementById('btnLess').addEventListener('click', function () {
 
 document.getElementById('btnEqual').addEventListener('click', function () {
     if (gameRun){
-        answerField.innerText = `Я всегда угадываю\n\u{1F60E}`
+        winnerRandom = Math.round(Math.random()*2);
+        (winnerRandom === 0) ? winnerPhrase = `Потому что я победитель по жизни`: 
+        (winnerRandom === 1) ? winnerPhrase = `Я всегда побеждаю`:
+        winnerPhrase = `Это было слишком просто`;
+        answerField.innerText = winnerPhrase;
         gameRun = false;
+        console.log(winnerRandom)
     }
 })
 
