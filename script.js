@@ -82,7 +82,6 @@ document.getElementById('btnLess').addEventListener('click', function () {
     }
 })
 
-
 document.getElementById('btnEqual').addEventListener('click', function () {
     if (gameRun){
         winnerRandom = Math.round(Math.random()*2);
@@ -91,7 +90,6 @@ document.getElementById('btnEqual').addEventListener('click', function () {
         winnerPhrase = `Это было слишком просто`;
         answerField.innerText = winnerPhrase;
         gameRun = false;
-        console.log(winnerRandom)
     }
 })
 
